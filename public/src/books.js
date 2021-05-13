@@ -19,6 +19,14 @@ function getBorrowersForBook(book, accounts){
   return book.borrows.map(borrow => mapToBorrow(borrow, accounts)).slice(0,10);
 }
 
+
+/*
+
+HELPER FUNCTION:
+  mapToBorrow 'helps main function getBorrowsForBook, by finding and returning
+  accounts whose id equals the id in borrow
+
+*/
 function mapToBorrow(borrow, accounts){
    let account = accounts.find(account => account.id === borrow.id);
    account.returned = borrow.returned;
